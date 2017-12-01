@@ -3,8 +3,8 @@ FluentD
 
 
 Install and configure fluentd
-
 This is a fork of https://github.com/jebovic/ansible-fluentd with added support for CentOS
+
 Compatibility
 -------------
 
