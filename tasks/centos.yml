@@ -1,0 +1,24 @@
+---
+
+- name: install libselinux-python binary for Ansible to work
+  yum: 
+    name: libselinux-python
+    state: present
+
+- name: add GPG key from Treasure Data, Inc
+#  command: rpm --import "{{ fluentd_key_url }}"
+  rpm_key: 
+    key: "{{ fluentd_key_url }}"
+    validate_certs: no 
+    state: present
+
+- name: add official repository
+  copy: 
+    src: ../files/td.repo 
+    dest: /etc/yum.repos.d/td.repo
+
+- name: install td-agent
+  yum: 
+    name: td-agent  
+    update_cache: yes  
+    state: present
