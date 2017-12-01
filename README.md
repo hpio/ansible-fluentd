@@ -171,4 +171,5 @@ Author Information
 ------------------
 
 Jérémy Baumgarth https://github.com/jebovic
+
 Piotr Hryszko https://github.com/hpio
