@@ -1,17 +1,16 @@
 FluentD
 =======
 
-[![Build Status](https://travis-ci.org/jebovic/ansible-fluentd.svg?branch=master)](https://travis-ci.org/jebovic/ansible-fluentd) [![Ansible Galaxy](https://img.shields.io/badge/galaxy-jebovic.fluentd-blue.svg?style=flat)](https://galaxy.ansible.com/jebovic/fluentd)
 
 Install and configure fluentd
 
-This role is a part of my [OPS project](https://github.com/jebovic/ops), follow this link to see it in action. OPS provides a lot of stuff, like a vagrant file for development VMs, playbooks for roles orchestration, inventory files, examples for roles configuration, ansible configuration file, and many more.
-
+This is a fork of https://github.com/jebovic/ansible-fluentd with added support for CentOS
 Compatibility
 -------------
 
 Tested and approved on :
 
+* CentOS 7
 * Debian jessie (8+)
 * Ubuntu Trusty (14.04 LTS)
 * Ubuntu Xenial (16.04 LTS)
@@ -21,7 +20,7 @@ Role Variables
 
 ```yaml
 # fluentd install configuration
-fluentd_apt_key_url: https://packages.treasuredata.com/GPG-KEY-td-agent
+fluentd_key_url: https://packages.treasuredata.com/GPG-KEY-td-agent
 fluentd_apt_repositories:
   - "deb http://packages.treasuredata.com/2/{{ ansible_distribution | lower }}/{{ ansible_distribution_release | lower }}/ {{ ansible_distribution_release | lower }} contrib"
 fluentd_packages:
@@ -64,7 +63,7 @@ Example Playbook
 ```yaml
 - hosts: servers
   roles:
-     - { role: jebovic.fluentd }
+     - { role: ansible-fluentd }
 ```
 
 Example : config
@@ -171,3 +170,4 @@ Author Information
 ------------------
 
 Jérémy Baumgarth https://github.com/jebovic
+Piotr Hryszko https://github.com/hpio
